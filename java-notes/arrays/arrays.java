@@ -1,4 +1,4 @@
-package arrays;
+package notes.arrays;
 import java.util.Arrays;
 
 class arrays{
