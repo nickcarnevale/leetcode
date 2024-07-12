@@ -58,8 +58,6 @@ class Solution2(object):
                 return [i, m[dif]]
 
             m[nums[i]] = i  # add each pair to the map
-        
-
 
 
         
