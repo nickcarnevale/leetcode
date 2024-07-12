@@ -1,13 +1,13 @@
-# https://leetcode.com/problems/3sum/
+# https://leetcode.com/problems/4sum/description/
 
 class Solution(object):
-    def threeSum(self, nums):
+    def fourSum(self, nums, target):
         """
         :type nums: List[int]
+        :type target: int
         :rtype: List[List[int]]
         """
 
-        hset = set()
         r = []
         n = len(nums)
         nums.sort()
@@ -19,6 +19,9 @@ class Solution(object):
             # inner loop to track the second of four in the sum
             # start with 1 after one to eliminate duplicates
             for two in range(one + 1, n - 2):
+
+                # if two > 0 and nums[two] == nums[two - 1]:
+                #     continue  # Skip duplicates
             
                 three = two + 1
                 four = n - 1    
@@ -31,13 +34,7 @@ class Solution(object):
                     elif sum > target:
                         four -= 1
                     else:
-                        l = (nums[one], nums[two], nums[three], nums[four])
-                        if l in hset:
-                            pass  # Already in the set, skip
-                        else: 
-                            r.append([nums[one], nums[two], nums[three], nums[four]])    
-                            hset.add(l)
-                            
+                        r.append([nums[one], nums[two], nums[three], nums[four]])
                         while three < four and nums[three] == nums[three + 1]:
                             three += 1  # Skip duplicates
                         while three < four and nums[four] == nums[four - 1]:
@@ -46,18 +43,10 @@ class Solution(object):
                         four -= 1
         return r
 
+                    
 
 
 
-            
-
-            
-
-        
 
 
 
-            
-
-            
-            
