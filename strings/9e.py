@@ -1,0 +1,21 @@
+# https://leetcode.com/problems/palindrome-number/
+
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+
+        s = str(x)
+        n = len(s)
+        l = 0
+        r = n-1
+
+        while l<r:
+            if(s[l]!=s[r]):
+                return False
+            l += 1
+            r -= 1
+        
+        return True
