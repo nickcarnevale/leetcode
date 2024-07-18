@@ -11,19 +11,40 @@ class Solution(object):
         n = len(s)
 
         # edge case
-        if(n == 1):
+        if n == 1 :
+            return False
+
+        if s[0] == ")" or s[0] == "]" or s[0] == "}":
+            return False
+
+        if s[-1] == "(" or s[-1] == "[" or s[-1] == "{":
             return False
 
         for i in range(n):
             if s[i] == ")" :
-                if stack[-1] == "(":
-                    stack.pop()
+                if len(stack) > 0:
+                    if stack[-1] == "(":
+                        stack.pop()
+                    else:
+                        return False
+                else:
+                    return False
             elif s[i] == "]" :
-                if stack[-1] == "[":
-                    stack.pop()
+                if len(stack) > 0:
+                    if stack[-1] == "[":
+                        stack.pop()
+                    else:
+                        return False
+                else:
+                    return False
             elif s[i] == "}" :
-                if stack[-1] == "{":
-                    stack.pop()
+                if len(stack) > 0:
+                    if stack[-1] == "{":
+                        stack.pop()
+                    else:
+                        return False
+                else:
+                    return False
             else:
                 stack.append(s[i])
             
@@ -31,6 +52,3 @@ class Solution(object):
             return True
 
         return False
-            
-
-            
