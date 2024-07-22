@@ -17,4 +17,25 @@ import sys
 def plusMinus(arr):
     # Write your code here
 
+    n = len(arr)
+    plus = 0
+    minus = 0
+    zero = 0
+
+    for i in arr:
+        if i > 0:
+            plus += 1
+        elif i < 0: 
+            minus += 1
+        else:
+            zero += 1
     
+    print(f"{plus/n:.6f}")
+    print(f"{minus/n:.6f}")
+    print(f"{zero/n:.6f}")
+
+
+arr = [1,1,0,-1,-1]
+plusMinus(arr)
+
+              
