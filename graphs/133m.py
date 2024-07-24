@@ -37,4 +37,3 @@ class Solution(object):
         
         return dfs(node) if node else None
 
-
