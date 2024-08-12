@@ -22,7 +22,3 @@ class Solution(object):
             calc.append(calc[first] + calc[second])
 
         return calc[-2] + calc[-1]
-
-
-
-        
