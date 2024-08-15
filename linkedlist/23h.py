@@ -50,6 +50,6 @@ class Solution(object):
 
             lists = merged
 
-        return lists[0]
+        return lists[0] 
 
         
