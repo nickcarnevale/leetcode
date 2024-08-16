@@ -36,5 +36,4 @@ class Solution(object):
             return [rob1, rob2]
 
         return max(dfs(root))
-
-        
+       
